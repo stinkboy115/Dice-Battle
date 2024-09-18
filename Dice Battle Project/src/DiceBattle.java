@@ -68,7 +68,6 @@ class Calculate {
     	 return computerScore;
     }
  
-     
 	public static int userHPChange (int playerScore, int computerScore, int playerHP, int computerHP) {
 		
 		int userFinalChange = 0;
@@ -108,7 +107,6 @@ class Calculate {
 
 }
 	    
-
 public class DiceBattle {
 	
 	public static void main (String[] args) {
@@ -123,7 +121,7 @@ public class DiceBattle {
 		int hardCPU = 300;
 		int customPlayer = 0;
 		int customCPU = 0;
-        int com = 0;
+        	int com = 0;
 		int dice1 = numbers.nextInt(6) + 1;
 		int dice2 = numbers.nextInt(6) + 1;
 		int dice3 = numbers.nextInt(6) + 1;
@@ -135,10 +133,9 @@ public class DiceBattle {
 		System.out.print ("\n- If User's score = CPU's score ==> Draw (No one takes damage).");
 		System.out.print ("\n- If User OR CPU roll doubles ==> Attack power is doubled.");
 
-        System.out.print ("\n\nSelecting Custom: You get to decide how much HP you and CPU recieve");
+        	System.out.print ("\n\nSelecting Custom: You get to decide how much HP you and CPU recieve");
 		System.out.print ("\nEach level increase the AI's HP from 150, 200, to 300. ");
 		System.out.print ("\n\nChoose a level (Easy, Normal, Hard, Custom): ");
-		
 			String option = scan.nextLine();
 
 			
@@ -182,9 +179,7 @@ public class DiceBattle {
 	    
 	    System.out.print ("\n*Note: After 10 rounds since no one win yet, the score will add up depend on the number of round.");
 	    System.out.print ("\n");
-	    // VAN NGUYEN, 11/18/2021
-
-	    // MICHAEL BUTLER, 11/12/2021
+		
 	    int round = 0;
 	    int count = 0;
 	    int playerScore;
@@ -200,7 +195,6 @@ public class DiceBattle {
 			System.out.print("Do you want to roll, heal, or quit? ");
 	        	userInput = scan.next(); 
 	        
-	        // VAN NGUYEN, 11/16/2021 
 	        while (!(userInput.equalsIgnoreCase("roll")) && !(userInput.equalsIgnoreCase("heal")) && !(userInput.equalsIgnoreCase("quit"))) {
 	        	
 	        	System.out.println ("==> System couldn't recognize the command you input. Please try again.");
@@ -216,14 +210,12 @@ public class DiceBattle {
 				System.out.print ("Do you want to roll, heal, or quit? ");
 		        	userInput = scan.next(); 
 			}
-	        // VAN NGUYEN, 11/16/2021 
 	        
-			// MICHAEL BUTLER, 11/12/2021
 			if (userInput.equalsIgnoreCase ("Roll")) {
 	
 				dice1 = numbers.nextInt(6) + 1;
 				dice2 = numbers.nextInt(6) + 1;
-			    dice3 = numbers.nextInt(6) + 1;
+			    	dice3 = numbers.nextInt(6) + 1;
 				dice4 = numbers.nextInt(6) + 1;
 	
 				playerScore = c.PlayerScore (dice1, dice2, round);
@@ -237,9 +229,7 @@ public class DiceBattle {
 				
 				defaultPlayerHP = c.userHPChange(playerScore, computerScore, defaultPlayerHP, com);
 				com = c.computerHPChange(playerScore, computerScore, defaultPlayerHP, com);
-				// MICHAEL BUTLER, 11/12/2021
 
-		        // VAN NGUYEN, 11/16/2021 
 				if (defaultPlayerHP <= 0) {
 					
 					defaultPlayerHP = 0;
@@ -301,11 +291,6 @@ public class DiceBattle {
 	    	
 	    	System.out.print ("\nSorry, you was beaten by CPU (" + option + " level) after " + count + " rounds. You can do it next time.");
 	    }
-	    
-	    // VAN NGUYEN, 12/01/2021 
-
-    
-
 
 
 	}
